@@ -8,6 +8,8 @@ from system.patterndisplay.events import *
 import math
 from tildagonos import tildagonos, led_colours
 
+CONFIG = "apps/controlkNL_tildagon_acapp/config.txt"
+
 class Image():
     def __init__(self):
         self.default_led = False
@@ -232,7 +234,7 @@ class ACApp(app.App):
         eventbus.emit(PatternDisable())
                 
         try:
-            fp = open("apps/ACAB/config.txt","r")
+            fp = open(CONFIG,"r")
             data = fp.read()
             fp.close()
             lines = data.split("\n")
@@ -314,7 +316,7 @@ class ACApp(app.App):
 
 
     def write_config(self):
-        with open("/apps/ACAB/config.txt","w") as fp:
+        with open(CONFIG,"w") as fp:
                 fp.write(str(self.images_index))
                 fp.write("\n")
                 fp.write(str(self.effects_index))
