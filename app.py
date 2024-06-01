@@ -8,7 +8,7 @@ from system.patterndisplay.events import *
 import math
 from tildagonos import tildagonos, led_colours
 
-CONFIG = "apps/controlkNL_tildagon_acapp/config.txt"
+CONFIG = "ACAB-config.txt"
 
 class Image():
     def __init__(self):
